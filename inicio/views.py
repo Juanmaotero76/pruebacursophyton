@@ -4,6 +4,7 @@ from datetime import datetime
 # Create your views here.
 from django.http import HttpResponse
 from django.template import Template, Context, loader
+import random
 
 def inicio (request):
     return HttpResponse("Hola Primer pagina")
@@ -63,3 +64,11 @@ def template4(request, nombre, apellido, edad):
         }
     
     return render(request,'template4.html', datos)
+
+def probando(request):
+    
+    lista = list(range(500))
+    
+    numeros = random.choices(lista, k=50)
+    print(numeros)
+    return render(request, 'probando_if_for.html', {'numeros': numeros})
