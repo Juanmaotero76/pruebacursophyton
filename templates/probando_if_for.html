@@ -1,21 +1,23 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
+
+
+
+{% extends 'base.html' %}
+{% load static %}
+{% block h1_header %}
+probando 
+{% endblock h1_header %}
+
+{% block main %}
     <ul>
-    {{numeros}}
         {% for num in numeros %}
             {% if num > 250 %}
-            <li style="color:red">Juan {{num}}</li>
+                <li style="color:red">Juan {{num}}</li>
             {% else %}
-            <li style="color:blue">Juan {{num}}</li>
+                <li style="color:blue">Juan {{num}}</li>
             {% endif %}
-        {% endfor %}
-    </ul>
-    
-</body>
-</html>
+        {% endfor %} 
+    </ul>    
+<img src={%static 'assets/img/testimonials-1.jpg' %} alt="">
+{% endblock main %}
+   
+
